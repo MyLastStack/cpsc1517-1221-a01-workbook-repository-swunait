@@ -81,6 +81,14 @@ namespace NhlSystemClassLibrary
         public Conference Conference { get; set; }
         public Division Division { get; set; }
 
+        // TODO: Define auto-implemented property for players: List<Player> with a private set
+
+
+        // TODO: Add method to add a new Player
+        // 1) Validate newPlayer is not null
+        // 2) Validate newPlayer PlayerNo is not already on the players list
+        // 3) Validate players list is not already full (max 23 players per team)
+
 
         // Greedy constructor
         public Team(string Name, string city, string arena, Conference conference, Division division)
