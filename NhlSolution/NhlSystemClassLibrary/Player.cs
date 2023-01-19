@@ -26,6 +26,7 @@ namespace NhlSystemClassLibrary
                 if (value < MinPlayerNo || value > MaxPlayerNo)
                 {
                     throw new ArgumentException($"PlayerNo must be between {MinPlayerNo} and {MaxPlayerNo}");
+                    //throw new ArgumentNullException(nameof(PlayerNo),$"PlayerNo must be between {MinPlayerNo} and {MaxPlayerNo}");
                 }
                 _playerNo = value;
             }
