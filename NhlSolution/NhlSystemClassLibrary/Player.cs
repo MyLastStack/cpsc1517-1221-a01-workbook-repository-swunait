@@ -111,6 +111,25 @@ namespace NhlSystemClassLibrary
             Assists = assists;
         }
 
+        public override string ToString()
+        {
+            // Return a CSV list of the properties used by the constructor
+            return $"{PlayerNo},{Name},{Position},{GamesPlayed},{Goals},{Assists}";
+        }
+
+        public static Player Parse(string csvLine)
+        {
+            const char Delimiter = ',';
+            const int ArrayLength = 6;
+            string[] tokens = csvLine.Split(Delimiter);
+            // Verify that the length of the array 
+            if (tokens.Length != ArrayLength)
+            {
+                throw new FormatException($"CSV line must contain exactly {ArrayLength} values.");
+;           }
+            return null;// new Player();
+        }
+
         // TODO: Define methods to
         // 1) add 1 to GamesPlayed
         // 2) add 1 to Goals
