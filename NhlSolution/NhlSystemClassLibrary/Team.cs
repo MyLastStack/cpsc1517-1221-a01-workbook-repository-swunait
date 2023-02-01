@@ -82,7 +82,7 @@ namespace NhlSystemClassLibrary
         public Division Division { get; set; }
 
         // TODO: Define auto-implemented property for players: List<Player> with a private set
-        public List<Player> players { get; private set; } //= new List<Player>();
+        public List<Player> Players { get; private set; } //= new List<Player>();
 
         // TODO: Add method to add a new Player
         // 1) Validate newPlayer is not null
@@ -94,18 +94,18 @@ namespace NhlSystemClassLibrary
             {
                 throw new ArgumentNullException(nameof(AddPlayer),"Player cannot be null");
             }           
-            foreach(var existingPlayer in players)
+            foreach(var existingPlayer in Players)
             {
                 if (newPlayer.PlayerNo == existingPlayer.PlayerNo)
                 {
                     throw new ArgumentException($"PlayerNo {newPlayer.PlayerNo} is already in the team");
                 }
             }
-            if (players.Count == 23)
+            if (Players.Count == 23)
             {
                 throw new ArgumentException("Team is full. Cannot add anymore players.");
             }
-            players.Add(newPlayer);
+            Players.Add(newPlayer);
         }
 
 
@@ -117,7 +117,7 @@ namespace NhlSystemClassLibrary
             Arena = arena;
             Conference = conference;
             Division = division;
-            players = new List<Player>();
+            Players = new List<Player>();
         }
 
         public override string ToString()
