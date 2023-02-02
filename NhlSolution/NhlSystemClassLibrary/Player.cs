@@ -56,6 +56,7 @@ namespace NhlSystemClassLibrary
                 {
                     throw new ArgumentException("GamesPlayed must be a positive or zero number.");
                 }
+                _gamesPlayed = value;
             }
         }
         // 5) Goals: int {Goals >= 0}
@@ -68,6 +69,7 @@ namespace NhlSystemClassLibrary
                 {
                     throw new ArgumentException("Goals must be a positive or zero number.");
                 }
+                _goals = value;
             }
         }
         // 6) Assists: int {Assists >= 0}
@@ -80,6 +82,7 @@ namespace NhlSystemClassLibrary
                 {
                     throw new ArgumentException("Assists must be a positive or zero number.");
                 }
+                _assists = value;
             }
         }
         // 7) Points : int { Goals + Assists}
@@ -101,6 +104,7 @@ namespace NhlSystemClassLibrary
             Name = name;
             Position = position;
         }
+
         public Player(int playerNo, string name, Position position, int gamesPlayed, int goals, int assists)
         {
             PlayerNo = playerNo;
