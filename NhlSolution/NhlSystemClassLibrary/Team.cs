@@ -83,7 +83,7 @@ namespace NhlSystemClassLibrary
         public Division Division { get; set; }
 
         // TODO: Define auto-implemented property for players: List<Player> with a private set
-        //[JsonInclude]
+        [JsonInclude]
         public List<Player> Players { get; private set; }
 
         // TODO: Add method to add a new Player
