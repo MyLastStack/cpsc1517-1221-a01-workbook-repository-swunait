@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection.Emit;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
@@ -82,7 +83,8 @@ namespace NhlSystemClassLibrary
         public Division Division { get; set; }
 
         // TODO: Define auto-implemented property for players: List<Player> with a private set
-        public List<Player> Players { get; set; } = new List<Player>();
+        //[JsonInclude]
+        public List<Player> Players { get; private set; }
 
         // TODO: Add method to add a new Player
         // 1) Validate newPlayer is not null
@@ -110,6 +112,7 @@ namespace NhlSystemClassLibrary
 
 
         // Greedy constructor
+        [JsonConstructor]
         public Team(string Name, string city, string arena, Conference conference, Division division)
         {
             this.Name = Name;

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace NhlSystemClassLibrary
@@ -105,6 +106,7 @@ namespace NhlSystemClassLibrary
             Position = position;
         }
 
+        [JsonConstructor]
         public Player(int playerNo, string name, Position position, int gamesPlayed, int goals, int assists)
         {
             PlayerNo = playerNo;
