@@ -110,9 +110,7 @@ namespace NhlSystemClassLibrary
             Players.Add(newPlayer);
         }
 
-
         // Greedy constructor
-        [JsonConstructor]
         public Team(string Name, string city, string arena, Conference conference, Division division)
         {
             this.Name = Name;
