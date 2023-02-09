@@ -15,6 +15,11 @@ namespace NhlWebApp.Pages
         // Define an auto-implemented property for username
         [BindProperty]
         public string Username { get; set; }
+        [BindProperty]
+        public int? Age { get; set; }
+        [BindProperty]
+        public string? DmitStream { get; set; } = "GP";
+
         // Define an auto-implemented property for feedback messages
         public string? InfoMessage { get; private set; }
 
@@ -25,7 +30,10 @@ namespace NhlWebApp.Pages
             // "Hello {username}. You lucky number is {luckyNumber}"
             var rand = new Random();
             var randomNumber = rand.Next(1, 51);
-            InfoMessage = $"Hello {Username}. You lucky number is {randomNumber}";
+            InfoMessage = $"Hello {Username}. You lucky number is {randomNumber} <br />";
+            InfoMessage += $"You are {Age} years old. <br />";
+            InfoMessage += $"You are in {DmitStream}. <br />";
+
         }
         public void OnGet()
         {
