@@ -6,4 +6,18 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Content Remove="wwwroot\data\OilersPlayers.csv" />
+    <Content Remove="wwwroot\data\team.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\NhlSystemClassLibrary\NhlSystemClassLibrary.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\data\OilersPlayers.csv" />
+    <None Include="wwwroot\data\team.json" />
+  </ItemGroup>
+
 </Project>
