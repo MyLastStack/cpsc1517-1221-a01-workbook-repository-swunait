@@ -6,11 +6,20 @@ namespace NhlWebApp.Pages
 {
     public class NhlPlayersModel : PageModel
     {
+        private IWebHostEnvironment WebHostEnvironment;
+
+        public NhlPlayersModel(IWebHostEnvironment env)
+        {
+            this.WebHostEnvironment = env;
+        }
+
         public List<Player> PlayerList { get; private set; } = new List<Player>();
 
         public void OnGet()
         {
-            string[] allLines = System.IO.File.ReadAllLines("C:\\Users\\swu\\source\\repos\\cpsc1517-1221-a01-workbook-repository-swunait\\NhlSolution\\NhlWebApp\\wwwroot\\data\\OilersPlayers.csv");
+            string wwwPath = WebHostEnvironment.WebRootPath;
+            string csvFilePath = Path.Combine(wwwPath, @"data\OilersPlayers.csv");
+            string[] allLines = System.IO.File.ReadAllLines(csvFilePath);
             foreach (var currentLine in allLines)
             {
                 try
